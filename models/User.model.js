@@ -12,11 +12,16 @@ const userSchema = new Schema(
     },
     passwordHash: {
       type: String,
+
+      required: [true, 'Password is required.']
     },
     email: {
       type: String,
       required: [true, 'This email already in use. 😢'],
       unique: true,
+      match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
+      lowercase: true,
+      trim: true
     },
     profilePicUrl: {
       type: String,

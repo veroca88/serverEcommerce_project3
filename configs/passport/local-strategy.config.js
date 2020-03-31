@@ -9,15 +9,15 @@ passport.use(
   'local',
   new LocalStrategy(
     {
-      usernameField: 'email'
+      usernameField: 'username'
       // passReqToCallback: true // if we need to use request in the callback we can pass it like this
       // in that case the callback would look like: (req, email, password, next)
     },
-    (email, password, next) => {
-      User.findOne({ email })
+    (username, password, next) => {
+      User.findOne({ username })
         .then(userFromDB => {
           if (!userFromDB) {
-            return next(null, false, { message: 'Incorrect email! 🛬' });
+            return next(null, false, { message: 'Incorrect username! 🛬' });
           }
           if (!bcryptjs.compareSync(password, userFromDB.passwordHash)) {
             return next(null, false, { message: 'Incorrect password! ❌' });
