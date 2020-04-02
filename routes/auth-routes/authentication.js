@@ -64,7 +64,8 @@ router.post('/api/signup', (req, res, next) => {
     .catch(err => next(err));
 });
 
-router.post('/api/login', routeGuard, (req, res, next) => {
+router.post('/api/login', (req, res, next) => {
+  console.log(`======================`)
   passport.authenticate('local', (err, user, failureDetails) => {
     if (err) {
       res.status(500).json({ message: 'Something went wrong with database query.' });

@@ -23,19 +23,30 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
-    profilePicUrl: {
+    profilePic: {
       type: String,
-      default:
-        'https://res.cloudinary.com/dpdnwaamk/image/upload/v1584649173/user-default_kjoqpi.png',
-    },
-    // Log of Delete and Update actions of the user
-    logActions: {
-      type: Array,
-    },
+      default: "user-default.png"
+  },
+  role: {
+    type: String,
+    default: "user"
+  },
+  userShoppingCart: {
+    type: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "ShoppingCart"
+        }
+    ]
+}
   },
   {
-    timestamps: true,
-  },
+    timestamps: true
+  }
+
 );
 
 module.exports = model('User', userSchema);
+
+
+       

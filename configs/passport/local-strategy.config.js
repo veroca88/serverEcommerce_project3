@@ -1,26 +1,26 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
 
-const bcryptjs = require('bcryptjs');
+const bcryptjs = require("bcryptjs");
 
-const User = require('../../models/User.model');
+const User = require("../../models/User.model");
 
 passport.use(
-  'local',
+  "local",
   new LocalStrategy(
     {
-      usernameField: 'username'
+      usernameField: "email"
       // passReqToCallback: true // if we need to use request in the callback we can pass it like this
       // in that case the callback would look like: (req, email, password, next)
     },
-    (username, password, next) => {
-      User.findOne({ username })
+    (email, password, next) => {
+      User.findOne({ email })
         .then(userFromDB => {
           if (!userFromDB) {
-            return next(null, false, { message: 'Incorrect username! 🛬' });
+            return next(null, false, { message: "Incorrect email! 🛬" });
           }
           if (!bcryptjs.compareSync(password, userFromDB.passwordHash)) {
-            return next(null, false, { message: 'Incorrect password! ❌' });
+            return next(null, false, { message: "Incorrect password! ❌" });
           }
           return next(null, userFromDB);
         })
