@@ -1,13 +1,12 @@
 const express = require('express');
 
 const router = express.Router();
-const uploadCloud = require('../configs/cloudinary.config');
-const routeGuard = require('../configs/route-guard.config');
+const routeGuard = require('../../configs/route-guard.config');
 
-const User = require('../models/User.model');
+const User = require('../../models/User.model');
 
 /* User profile page */
-router.get('/profile', routeGuard, (req, res, next) => {
+router.get('/api/profile', routeGuard, (req, res, next) => {
   User.findOne({_id: req.user._id})
   .then(currentUser => {
     console.log({currentUser})
@@ -17,7 +16,7 @@ router.get('/profile', routeGuard, (req, res, next) => {
 
 });
 
-router.post('/profile/update', routeGuard, uploadCloud.single('imageUrl') ,(req, res, next) => {
+router.post('/api/profile/update', routeGuard, (req, res, next) => {
   console.log(">>>>>>>>>>>>>>>>>> updating profile <<<<<<<<<<<<<<<<<<<<< ");
   const userInputInfo = req.body;
   
@@ -25,22 +24,14 @@ router.post('/profile/update', routeGuard, uploadCloud.single('imageUrl') ,(req,
   const {username, email} = req.body
   if (username === "" || email === "") {
     res.status(404).json({
-      errorMessage: "Please fill up the forms."
+      message: "Please fill up the forms."
     });
     return;
   }
-  // Check if there is a file to upload
-  if (req.file) {
-    // Preparing to save the original file
-    userInputInfo.imageUrl = req.file.url;
-    // Setup the Profile Pic with crop face image from Cloudinary
-     let cropFaceImage = userInputInfo.imageUrl;
-     cropFaceImage = cropFaceImage.split('upload/')
-     let finalImg = `${cropFaceImage[0]}upload/w_240,h_240,c_thumb,g_face,r_max/${cropFaceImage[1].substr(0, cropFaceImage[1].length - 3)}png`
-      console.log(finalImg)
-     //req.session.imageUrl = updatedUser.imageUrl;
-     userInputInfo.profilePicUrl = finalImg;
-  }
+  // Check if there are products in the shopping Cart
+  // if (req.userShoppingCart) {
+    
+  // }
 
   // Prepare to log the action =======================
   let dt = new Date();
@@ -52,7 +43,7 @@ router.post('/profile/update', routeGuard, uploadCloud.single('imageUrl') ,(req,
   }, {new:true})
   .then( updatedUser => {
     console.log({updatedUser});
-    res.json('/profile');
+    res.json('/api/profile');
   })
   .catch(err => next(err))
   

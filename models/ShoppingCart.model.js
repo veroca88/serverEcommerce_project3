@@ -4,9 +4,9 @@ const { Schema, model } = mongoose;
 
 const shoppingCartSchema = new Schema(
   {
-    item: {
-      type: Schema.Types.ObjectId,
-      ref: 'Product'
+    orders: {
+      type: [Schema.Types.ObjectId],
+        ref: 'Product'
     },
     quantity: {
       type: Number, 
@@ -15,6 +15,11 @@ const shoppingCartSchema = new Schema(
     },
     total: { 
       type: Number
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'You need an owner id'],
     }
   },
   {
@@ -23,3 +28,5 @@ const shoppingCartSchema = new Schema(
 );
 
 module.exports = model('ShoppingCart', shoppingCartSchema);
+
+// model link orders []

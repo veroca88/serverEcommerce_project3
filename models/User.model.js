@@ -23,21 +23,13 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
-    profilePic: {
-      type: String,
-      default: "user-default.png"
-  },
   role: {
     type: String,
-    default: "user"
+    enum: ["user", "seller"]
   },
   userShoppingCart: {
-    type: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "ShoppingCart"
-        }
-    ]
+              type: Schema.Types.ObjectId,
+              ref: "Products"
 }
   },
   {

@@ -18,7 +18,6 @@ const productSchema = new Schema(
     material: {
       type: String,
       required: true,
-      unique: true,
       enum: ['cotton', 'wood', 'cabuya', 'seeds', 'cotton and wood', 'coconut', 'pineapple']
     },
     cost: {
@@ -28,6 +27,11 @@ const productSchema = new Schema(
     image: {
       type: String,
       required: true
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: [true, 'You need an owner id'],
     }
   },
   {
