@@ -23,9 +23,9 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
-  role: {
-    type: String,
-    enum: ["user", "seller"]
+  designer: {
+    type: Boolean,
+    default: false    
   },
   userShoppingCart: {
               type: Schema.Types.ObjectId,

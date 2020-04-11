@@ -4,11 +4,9 @@ const { Schema, model } = mongoose;
 
 const productSchema = new Schema(
   {
-    code: {
-      type: Number,
-      trim: true,
-      required: true,
-      match: [/^[0-9]{1,6}$/]
+    name: {
+      type: String,
+      required: true
     },
     type: {
       type: String,
@@ -27,11 +25,6 @@ const productSchema = new Schema(
     image: {
       type: String,
       required: true
-    },
-    owner: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-      required: [true, 'You need an owner id'],
     }
   },
   {
