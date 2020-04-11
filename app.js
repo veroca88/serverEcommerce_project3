@@ -37,6 +37,8 @@ require('./configs/session.config')(app);
 
 require('./configs/passport/passport.config.js')(app);
 
+///
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
@@ -46,9 +48,10 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
+app.use('/', require('./routes/seed-route/seed'));
 app.use('/', require('./routes/auth-routes/authentication'));
 app.use('/', require('./routes/user-route/user'));
 app.use('/', require('./routes/product-routes/product'));
-app.use('/', require('./routes/shopping-routes/shopping'));
+// app.use('/', require('./routes/shopping-routes/shopping'));
 
 module.exports = app;
