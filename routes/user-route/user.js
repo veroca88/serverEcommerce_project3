@@ -6,19 +6,20 @@ const routeGuard = require('../../configs/route-guard.config');
 const User = require('../../models/User.model');
 
 /* User profile page */
-router.get('/api/profile', routeGuard, (req, res, next) => {
+router.get('/api/profile', routeGuard, (req, res) => {
   User.findOne({_id: req.user._id})
   .then(currentUser => {
-    console.log({currentUser})
+    console.log(`BE user.js the current user is ${currentUser}`)
     res.status(200).json({user: currentUser});
   })
   .catch(err => next(err))
 
 });
 
-router.post('/api/profile/update', routeGuard, (req, res, next) => {
-  console.log(">>>>>>>>>>>>>>>>>> updating profile <<<<<<<<<<<<<<<<<<<<< ");
-  const userInputInfo = req.body;
+
+router.post('/api/profile/upload', routeGuard, (req, res, next) => {
+  console.log(">>>>>>>>>>>>>>>>>> updating profile <<<<<<<<<<<<<<<<<<<<< ", req.user);
+  // const userInputInfo = req.body;
   
   // Prevent user to force empty input
   const {username, email} = req.body
@@ -28,22 +29,10 @@ router.post('/api/profile/update', routeGuard, (req, res, next) => {
     });
     return;
   }
-  // Check if there are products in the shopping Cart
-  // if (req.userShoppingCart) {
-    
-  // }
-
-  // Prepare to log the action =======================
-  let dt = new Date();
-  let utcDate = dt.toUTCString();
-
-  User.findByIdAndUpdate( req.user._id, { 
-    $set: userInputInfo,
-    $push: {logActions: {action: 'Profile update', date: utcDate}},
-  }, {new:true})
+  //Instead of req.params i changed to user._id due to 
+  User.findByIdAndUpdate( req.user._id, req.body, {new:true})
   .then( updatedUser => {
-    console.log({updatedUser});
-    res.json('/api/profile');
+    res.status(200).json({user: updatedUser});
   })
   .catch(err => next(err))
   

@@ -15,7 +15,7 @@ router.post('/api/signup', (req, res, next) => {
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
-    console.log(`============================================`, username)
+    console.log(`BE authentication.js ============================================`, username)
     res.status(401).json({
       message: 'All fields are mandatory. Please provide your username, email and password.'
     });
@@ -65,7 +65,7 @@ router.post('/api/signup', (req, res, next) => {
 });
 
 router.post('/api/login', (req, res, next) => {
-  console.log(`======================`)
+  console.log(`BE authentication.js ======================`)
   passport.authenticate('local', (err, user, failureDetails) => {
     if (err) {
       res.status(500).json({ message: 'Something went wrong with database query.' });
@@ -90,7 +90,7 @@ router.post('/api/logout', routeGuard, (req, res, next) => {
 
 router.get('/api/isLoggedIn', (req, res) => {
   if (req.user) {
-    console.log('======================= here: ', req.user)
+    console.log('BE authentication.js======================= here: ', req.user)
     req.user.passwordHash = undefined;
     res.status(200).json({ user: req.user });
     return;
