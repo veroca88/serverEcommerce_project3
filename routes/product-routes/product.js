@@ -12,7 +12,7 @@ const Product = require("../../models/Product.model");
             res.status(200).json(productsFromDB);
             console.log(`++++++++++++++++++++++++++++++++`, productsFromDB)
         })
-        .catch((err) => req.status(500).json(err));
+        .catch((err) => console.log(err));
 });
 
 
@@ -23,7 +23,7 @@ router.get("/products/:productId", (req, res, next) => {
       .then((productFromDB) => {
           res.status(200).json(productFromDB);
       })
-      .catch((err) => req.status(400).json(err));
+      .catch((err) => console.log(err));
 });
 
 // Delete Product
@@ -34,7 +34,7 @@ router.delete("/products/:productId", (req, res, next) => {
               message: "Successful Deletion of Product",
           });
       })
-      .catch((err) => req.status(400).json(err));
+      .catch((err) => console.log(err));
 });
 
 
