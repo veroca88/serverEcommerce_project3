@@ -10,7 +10,7 @@ const Product = require("../../models/Product.model");
     Product.find()
         .then((productsFromDB) => {
             res.status(200).json(productsFromDB);
-            console.log(`++++++++++++++++++++++++++++++++`, productsFromDB)
+            console.log(`BE product.js LINE 13 ++++++++++++++++++++++++++++++++`, productsFromDB)
         })
         .catch((err) => console.log(err));
 });

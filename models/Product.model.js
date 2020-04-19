@@ -16,7 +16,7 @@ const productSchema = new Schema(
     material: {
       type: String,
       required: true,
-      enum: ['cotton', 'wood', 'cabuya', 'seeds', 'cotton and wood', 'coconut', 'pineapple']
+      enum: ['cotton', 'wool', 'cabuya', 'wood', 'seeds', 'cotton and wool', 'coconut', 'pineapple']
     },
     cost: {
       type: Number,
