@@ -10,7 +10,7 @@ router.get("/seed-library", async (req, res, next) => {
             Product.create(product);
         });
 
-        res.status(200).json({ message: "DB has been seeded"});
+        res.status(200).json({ message: "DB has been seeded!!"});
         // res.status(200).json(arrayOfProducts);
     } catch (err) {
         res.status(500).json(err);

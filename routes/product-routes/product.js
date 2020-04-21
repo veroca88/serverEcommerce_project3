@@ -10,7 +10,7 @@ const Product = require("../../models/Product.model");
     Product.find()
         .then((productsFromDB) => {
             res.status(200).json(productsFromDB);
-            console.log(`BE product.js LINE 13 ++++++++++++++++++++++++++++++++`, productsFromDB)
+            console.log(`BE product.js LINE 13 ++++++++++++++++++++++++++++++++`, productsFromDB[0])
         })
         .catch((err) => console.log(err));
 });
@@ -19,15 +19,16 @@ const Product = require("../../models/Product.model");
 // Show description of one product
 
 router.get("/products/:productId", (req, res, next) => {
-  Product.findById(req.params.productId)
-      .then((productFromDB) => {
-          res.status(200).json(productFromDB);
+    Product.findById(req.params.productId)
+    // console.log(`BE product.js LINE 23 =====`, req.params.productId)
+      .then((currentProduct) => {
+          res.status(200).json(currentProduct);
       })
       .catch((err) => console.log(err));
 });
 
 // Delete Product
-router.delete("/products/:productId", (req, res, next) => {
+router.delete("/details/:productId", (req, res, next) => {
   Product.findByIdAndDelete(req.params.productId)
       .then(() => {
           res.status(200).json({
