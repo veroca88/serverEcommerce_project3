@@ -8,6 +8,20 @@ const productSchema = new Schema(
       type: String,
       required: true
     },
+    color: {
+      type: [String],
+      required: true,
+      enum: ['natural', 'multicolor', 'black/red', 'natural/blue', 'black', 'lightblue', 'red/gree', 'orange/blue', 'orange', 'green', 'blue', 'red', 'beige', 'orange', 'blue/green', 'orange/yellow', 'pink', 'gray', 'brown', 'brown/beige', 'black/white', 'white/blue']
+    },
+    size: {
+      type: [String],
+      required: true,
+      enum: ["XS", "S", "M", "XL", "XS/52", "S/54", "M/56", "XL/58", "35", "36", "37", "38", "39", "40", "41", "nosize"]
+    },
+    description: {
+      type: String,
+      required: true
+    },
     type: {
       type: String,
       required: true,
