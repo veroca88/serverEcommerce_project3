@@ -27,6 +27,24 @@ router.get("/products/:productId", (req, res, next) => {
       .catch((err) => console.log(err));
 });
 
+// Add product
+
+router.post("/products/:productId/add", (req, res) => {
+    Product.findByIdAndUpdate(req.params.productId)
+    console.log(`BE product.js LINE 23 =====`, req.params.productId)
+        const { color, size, _id } = req.body;
+        console.log('BE product.js LINE34 this is id of product', _id)
+      
+        if (!size || !quantity || !color) {
+          res.status(401).json({
+            message: 'Please select size, color and quantity.'
+          });
+          return;
+        }
+      
+       
+})
+
 // Delete Product
 router.delete("/details/:productId", (req, res, next) => {
   Product.findByIdAndDelete(req.params.productId)
