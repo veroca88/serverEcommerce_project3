@@ -52,6 +52,6 @@ app.use('/', require('./routes/seed-route/seed'));
 app.use('/', require('./routes/auth-routes/authentication'));
 app.use('/', require('./routes/user-route/user'));
 app.use('/', require('./routes/product-routes/product'));
-// app.use('/', require('./routes/shopping-routes/shopping'));
+app.use('/', require('./routes/shopping-routes/shopping'));
 
 module.exports = app;
