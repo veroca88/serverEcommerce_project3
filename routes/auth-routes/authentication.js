@@ -7,15 +7,16 @@ const mongoose = require('mongoose');
 const saltRounds = 10;
 const passport = require('passport');
 const User = require('../../models/User.model');
+const ShoppingCart = require('../../models/ShoppingCart.model')
 
 const routeGuard = require('../../configs/route-guard.config');
 
 // .post() route ==> to process form data
 router.post('/api/signup', (req, res, next) => {
   const { username, email, password } = req.body;
+  console.log(`BE authentication.js signup ============================================`, req.body)
 
   if (!username || !email || !password) {
-    console.log(`BE authentication.js ============================================`, username)
     res.status(401).json({
       message: 'All fields are mandatory. Please provide your username, email and password.'
     });
@@ -40,14 +41,20 @@ router.post('/api/signup', (req, res, next) => {
         email,
         passwordHash: hashedPassword
       })
-        .then(user => {
-          // user.passwordHash = undefined;
+      .then(user => {
+        ShoppingCart.create({owner: user._id})          // user.passwordHash = undefined;
           // res.status(200).json({ user });
-          req.login(user, err => {
-            if (err) return res.status(500).json({ message: 'Something went wrong with login!' });
-            user.passwordHash = undefined;
-            res.status(200).json({ message: 'Login successful!', user });
-          });
+          .then(shopCart => {
+            User.findByIdAndUpdate(user._id, {userShoppingCart: shopCart}, {new: true})
+            .populate('userShoppingCart')
+            .then(user => {
+              req.login(user, err => {
+                if (err) return res.status(500).json({ message: 'Something went wrong with login!' });
+                user.passwordHash = undefined;
+                res.status(200).json({ message: 'Login successful!', user });
+              });
+            })
+          })
         })
         .catch(err => {
           if (err instanceof mongoose.Error.ValidationError) {
@@ -61,11 +68,12 @@ router.post('/api/signup', (req, res, next) => {
           }
         });
     })
-    .catch(err => next(err));
+    .catch(err => {
+      console.log(err)
+      next(err)});
 });
 
 router.post('/api/login', (req, res, next) => {
-  console.log(`BE authentication.js ======================`)
   passport.authenticate('local', (err, user, failureDetails) => {
     if (err) {
       res.status(500).json({ message: 'Something went wrong with database query.' });
