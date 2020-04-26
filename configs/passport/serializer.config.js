@@ -14,7 +14,7 @@ passport.serializeUser((loggedInUser, next) => {
 // .deserializeUser() keeps you in and you don't have to log in
 passport.deserializeUser((userIdFromSession, next) => {
   // deserialize user => retrieve user information from database
-  User.findById(userIdFromSession)
+  User.findById(userIdFromSession).populate('userShoppingCart')
     .then(fullUserDoc => next(null, fullUserDoc))
     .catch(err => next(err));
 });

@@ -14,7 +14,7 @@ passport.use(
       // in that case the callback would look like: (req, email, password, next)
     },
     (email, password, next) => {
-      User.findOne({ email })
+      User.findOne({ email }).populate('userShoppingCart')
         .then(userFromDB => {
           if (!userFromDB) {
             return next(null, false, { message: "Incorrect email! 🛬" });
