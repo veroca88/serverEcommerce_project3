@@ -36,10 +36,24 @@ const productSchema = new Schema(
       type: Number,
       required: true
     },
+    inShopBag: {
+      type: Boolean,
+      required: true
+    },
     image: {
       type: String,
       required: true
     }
+    // owner: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'User',
+    //   required: [true, 'You need an owner id'],
+    // }
+    // userShoppingCart: {
+    //   type: Schema.Types.ObjectId, //mongoose.Schema.ObjectId
+    //   ref: "ShoppingCart",
+    //   require: true
+    // },
   },
   {
     timestamps: true,
