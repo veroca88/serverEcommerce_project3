@@ -27,9 +27,8 @@ const userSchema = new Schema(
       default: false,
     },
     userShoppingCart: {
-      type: Schema.Types.ObjectId, //mongoose.Schema.ObjectId
+      type: Schema.Types.ObjectId, 
       ref: "ShoppingCart"
-      // require: true
     },
   },
   {
