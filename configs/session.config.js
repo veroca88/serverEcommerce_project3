@@ -22,7 +22,7 @@ module.exports = app => {
       // activeDuration: 1000 * 60 * 5, // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
       store: new MongoStore({
         mongooseConnection: mongoose.connection,
-        ttl: 24 * 60 * 60,
+        ttl: 24 * 60 * 60 * 1000,
       })
     })
   );
