@@ -7,8 +7,11 @@ const DataProducts = [
     type: "upper",
     material: "wool",
     cost: 32,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028234/ecommerce_ironhack3/Screenshot_from_2020-04-01_20-49-47_aeyjvp.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Fine-knit Sweater",
@@ -18,8 +21,11 @@ const DataProducts = [
     type: "upper",
     material: "wool",
     cost: 35,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028235/ecommerce_ironhack3/000002_mwgjay.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Kimono Blouse",
@@ -29,8 +35,11 @@ const DataProducts = [
     type: "upper",
     material: "cotton",
     cost: 38,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028234/ecommerce_ironhack3/000003_aq9r06.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Black-heeled boot",
@@ -40,8 +49,11 @@ const DataProducts = [
     type: "accessory",
     material: "pineapple",
     cost: 55,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028231/ecommerce_ironhack3/000004_zdccyy.png",
+    count: 0,
+    total: 0
   },
   {
     name: "High Tops",
@@ -51,8 +63,11 @@ const DataProducts = [
     type: "accessory",
     material: "pineapple",
     cost: 72,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028232/ecommerce_ironhack3/000005_q77y4e.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Outdoor Parka",
@@ -62,8 +77,11 @@ const DataProducts = [
     type: "upper",
     material: "pineapple",
     cost: 102,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028229/ecommerce_ironhack3/000006_auynkz.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Handbag Wallet",
@@ -73,8 +91,11 @@ const DataProducts = [
     type: "accessory",
     material: "pineapple",
     cost: 30,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028229/ecommerce_ironhack3/000007_m0rw6q.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Portfoio handbag",
@@ -84,8 +105,11 @@ const DataProducts = [
     type: "accessory",
     material: "coconut",
     cost: 62,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028228/ecommerce_ironhack3/000008_ceeqhc.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Fanny Pack Belt",
@@ -95,8 +119,11 @@ const DataProducts = [
     type: "accessory",
     material: "coconut",
     cost: 42,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028228/ecommerce_ironhack3/000009_wxn0ad.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Coconut Sandals",
@@ -106,8 +133,11 @@ const DataProducts = [
     type: "accessory",
     material: "coconut",
     cost: 38,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028229/ecommerce_ironhack3/000010_efer5y.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Minimal Wallet",
@@ -117,8 +147,11 @@ const DataProducts = [
     type: "accessory",
     material: "coconut",
     cost: 32,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028226/ecommerce_ironhack3/000011_ef79yw.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Pajatoquilla Hat",
@@ -128,8 +161,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 70,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028243/ecommerce_ironhack3/000012_ph5bgx.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Straw Hat",
@@ -139,8 +175,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 76,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028242/ecommerce_ironhack3/000013_prglym.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Slingbacks",
@@ -150,8 +189,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 45,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028241/ecommerce_ironhack3/000014_nivrwy.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Trenchcoat",
@@ -161,8 +203,11 @@ const DataProducts = [
     type: "upper",
     material: "wool",
     cost: 68,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028242/ecommerce_ironhack3/000015_cgumif.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Poncho",
@@ -172,8 +217,11 @@ const DataProducts = [
     type: "upper",
     material: "wool",
     cost: 68,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028240/ecommerce_ironhack3/000016_hsnksk.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Linen-blend Blouse",
@@ -183,8 +231,11 @@ const DataProducts = [
     type: "upper",
     material: "cotton",
     cost: 42,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028241/ecommerce_ironhack3/000017_dpzvim.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Straight-cut Poncho",
@@ -194,8 +245,11 @@ const DataProducts = [
     type: "upper",
     material: "wool",
     cost: 72,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028241/ecommerce_ironhack3/000018_rrmhrj.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Sneakers Road",
@@ -205,8 +259,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 35,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028241/ecommerce_ironhack3/000019_l7aln0.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Espadrilles",
@@ -216,8 +273,11 @@ const DataProducts = [
     type: "accessory",
     material: "cotton",
     cost: 35,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028238/ecommerce_ironhack3/000020_xangux.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Inti Bag",
@@ -227,8 +287,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 60,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028238/ecommerce_ironhack3/000021_jgbmtk.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Chaski Bag",
@@ -238,8 +301,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 60,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028238/ecommerce_ironhack3/000022_gsbjkk.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Shigra",
@@ -249,8 +315,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 60,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028238/ecommerce_ironhack3/000023_ml9htb.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Warmi Portfolio",
@@ -260,8 +329,11 @@ const DataProducts = [
     type: "accessory",
     material: "cotton and wool",
     cost: 50,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028238/ecommerce_ironhack3/000024_ihjkbu.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Belly Bum Bag",
@@ -271,8 +343,11 @@ const DataProducts = [
     type: "accessory",
     material: "cotton and wool",
     cost: 35,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028238/ecommerce_ironhack3/000025_xbpk0m.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Huayna Bag",
@@ -282,8 +357,11 @@ const DataProducts = [
     type: "accessory",
     material: "cotton and wool",
     cost: 35,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028236/ecommerce_ironhack3/000026_g9vhll.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Wool Shopper",
@@ -293,8 +371,11 @@ const DataProducts = [
     type: "accessory",
     material: "cotton and wool",
     cost: 35,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028236/ecommerce_ironhack3/000027_cpvy9q.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Piramid necklace",
@@ -304,8 +385,11 @@ const DataProducts = [
     type: "accessory",
     material: "seeds",
     cost: 36,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028231/ecommerce_ironhack3/000028_xzaxow.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Knit Choker",
@@ -315,8 +399,11 @@ const DataProducts = [
     type: "accessory",
     material: "seeds",
     cost: 32,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028232/ecommerce_ironhack3/000029_pyylye.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Multicolor Choker",
@@ -326,8 +413,11 @@ const DataProducts = [
     type: "accessory",
     material: "seeds",
     cost: 38,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028234/ecommerce_ironhack3/000030_bbtqm4.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Braid Necklace",
@@ -337,8 +427,11 @@ const DataProducts = [
     type: "accessory",
     material: "seeds",
     cost: 44,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028230/ecommerce_ironhack3/000031_c1kpqq.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Knit Bag Shooper",
@@ -348,8 +441,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 56,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028233/ecommerce_ironhack3/000032_bqemu9.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Mix Bag Shopper",
@@ -359,8 +455,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 58,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028230/ecommerce_ironhack3/000033_jhtwfl.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Lightblue Peace Sunglasses",
@@ -370,8 +469,11 @@ const DataProducts = [
     type: "accessory",
     material: "wood",
     cost: 40,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028226/ecommerce_ironhack3/000034_ecp88b.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Black Potter",
@@ -381,8 +483,11 @@ const DataProducts = [
     type: "accessory",
     material: "wood",
     cost: 40,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028226/ecommerce_ironhack3/000035_rt65gt.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Sunset",
@@ -392,8 +497,11 @@ const DataProducts = [
     type: "accessory",
     material: "wood",
     cost: 40,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028226/ecommerce_ironhack3/000036_k37dro.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Sunlight Grass",
@@ -403,8 +511,11 @@ const DataProducts = [
     type: "accessory",
     material: "wood",
     cost: 40,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028224/ecommerce_ironhack3/000037_hn9dye.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Knit Sneaker",
@@ -414,8 +525,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 48,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028225/ecommerce_ironhack3/000038_c9t99h.png",
+    count: 0,
+    total: 0
   },
   {
     name: "Panama Pajatoquilla Hat",
@@ -425,8 +539,11 @@ const DataProducts = [
     type: "accessory",
     material: "cabuya",
     cost: 68,
+    inShopBag: false,
     image:
       "https://res.cloudinary.com/veroca/image/upload/v1586028223/ecommerce_ironhack3/000039_zvngzz.png",
+    count: 0,
+    total: 0
   },
 ];
 
