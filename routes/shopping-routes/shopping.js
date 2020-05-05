@@ -8,8 +8,41 @@ const Product = require('../../models/Product.model');
 const User = require('../../models/User.model');
 const ShoppingCart = require('../../models/ShoppingCart.model');
 
-router.get('/api/shopping-bag', routeGuard, (req, res, next) => {
-    ShoppingCart.find({ owner: req.userId })
+router.post('/api/shopping-bag',  (req,res,next) => {
+  const { orderItem } = req.body
+  console.log('shopping.js be line 13333333333333333333', req.body)
+
+  ShoppingCart.findByIdAndUpdate(req.user.userShoppingCart, {
+      $push: {items: {item:orderItem, quantity: 1}}, $set:  {date: Date.now()}, $inc: {total: orderItem.cost}
+    }, {new: true})
+    .then(currentItem => {
+      res.status(200).json(currentItem)
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err)})
+
+
+
+
+//   console.log('REQ', req.body)
+//   const { orderItem } = req.body;
+//   try {
+//   const call = async () => await ShoppingCart.findByIdAndUpdate(req.user.userShoppingCart, {
+//   $push: {items: {item:orderItem, quantity: 1 }}, $set:  {date: Date.now()}, $inc: {total: orderItem.cost}
+// }, {new: true})
+//   const cart = call();
+// console.log('CART', cart)
+//   res.status(200).json(cart);
+// } catch(err) {
+//   console.log(err);
+//   res.status(500).json(err)
+// }
+})
+
+
+router.get('/api/shopping-bag/:userId', routeGuard, (req, res, next) => {
+    ShoppingCart.find({ owner: req.params.userId })
       .then(currentShopBag => {
         console.log({
           currentShopBag,
@@ -20,12 +53,11 @@ router.get('/api/shopping-bag', routeGuard, (req, res, next) => {
         console.log('There is no Account.')
           return;
         }
-        res.json({ shopBag: currentShopBag,
+        res.json({ shoppingBag: currentShopBag,
         });
       })
       .catch(err => console.log(err));
   });
-
 
 
 
