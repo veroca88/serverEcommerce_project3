@@ -43,6 +43,7 @@ router.post('/api/shopping-bag',  (req,res,next) => {
 
 router.get('/api/shopping-bag/:userId', routeGuard, (req, res, next) => {
     ShoppingCart.find({ owner: req.params.userId })
+    console.log('OWNER', owner)
       .then(currentShopBag => {
         console.log({
           currentShopBag,
