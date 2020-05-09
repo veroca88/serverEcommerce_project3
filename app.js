@@ -20,7 +20,9 @@ require('./configs/db.configs');
 
 //Cross-Origin Resource Sharing
 app.use(cors({
-  origin: [process.env.FRONTEND_POINT], //this point is react is going to run and goes in env file too
+  // origin: [process.env.FRONTEND_POINT], 
+  //this point is react is going to run and goes in env file too
+  origin: true,
   credentials: true //this need to setup on the frontend as well
                     //in axios withCredentials: true
 }))
